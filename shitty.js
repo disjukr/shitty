@@ -148,6 +148,8 @@ shitty.shit.prototype.bung = function bung(fin) {
                         this.bigShit = '';
                         waiting = false;
                         clearTimeout(this.timeout);
+                    } else {
+                        flush.push(shit);
                     }
                     return litmus;
                 } else {
