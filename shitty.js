@@ -14,6 +14,7 @@ shitty.shit = function shit() {
     this.lessShit = this;
     this.bigShit = '';
     this.toilet = [];
+    this.stop = null;
     this.timeout = -1;
 };
 util.inherits(shitty.shit, EventEmitter);
@@ -79,6 +80,10 @@ shitty.shit.prototype.bung = function bung(fin) {
         var newShit = false;
         var flush = this.toilet.reverse();
         this.toilet = null;
+        this.stop = function (reason) {
+            totallyShit.kill();
+            reject(reason);
+        };
         totallyShit.stdout.on('data', function (chunk) {
             this.bigShit += chunk.toString();
             this.emit('stdout', chunk);
