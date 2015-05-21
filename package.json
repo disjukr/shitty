@@ -1,0 +1,7 @@
+{
+  "name": "shitty",
+  "version": "0.0.0",
+  "description": "for shitty work",
+  "main": "shitty.js",
+  "license": "zlib"
+}
